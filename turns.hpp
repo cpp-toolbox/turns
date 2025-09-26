@@ -1,14 +1,15 @@
 #ifndef TURNS_HPP
 #define TURNS_HPP
 
-// NOTE: Turns are a way of measuring angles in way where we don't have to care about arbitrary constants when we talk
-// about a single turn, when we're working in degrees that arbitrary choice was 360, and when we're working in radians
-// that value is pi, but the only way we attach meaning to those values is that they map back to one turn around the
-// circle, so why not just cut out the middle man and work with turns directly?
+/**
+ *   Turns are a way of measuring angles in way where we don't have to care about arbitrary constants when we talk
+ *   about a single turn, when we're working in degrees that arbitrary choice was 360, and when we're working in radians
+ *   that value is pi, but the only way we attach meaning to those values is that they map back to one turn around the
+ *   circle, so why not just cut out the middle man and work with turns directly?
+ */
 
 namespace turns {
 
-// NOTE: go to the bottom of the file for visualizations.
 extern const double one_sixth_turn;
 extern const double one_third_turn;
 extern const double one_half_turn;
@@ -31,7 +32,9 @@ constexpr double degrees_to_turns(double degrees) { return degrees / 360.0; }
 
 }; // namespace turns
 
-/*
+/** @namespace turns full circle
+
+@code
                    ooo OOO OOO ooo
                oOO                 OOo
            oOO                         OOo
@@ -53,9 +56,13 @@ constexpr double degrees_to_turns(double degrees) { return degrees / 360.0; }
            oOO                         OOo
                oOO                 OOo
                    ooo OOO OOO ooo
+
+@endcode
 */
 
-/* THIRDS
+/** @namespace turns circle cut into thirds
+
+@code
                    ooo OOO OOO ooo
                oOO                 OOo
            oOO    X                    OOo
@@ -77,9 +84,12 @@ constexpr double degrees_to_turns(double degrees) { return degrees / 360.0; }
            oOO    X                    OOo
                oOO                 OOo
                    ooo OOO OOO ooo
+@endcode
 */
 
-/* SIXTHS
+/** @namespace turns circle cut into sixths
+
+@code
                    ooo OOO OOO ooo
                oOO                 OOo
            oOO    X               X    OOo
@@ -101,9 +111,11 @@ constexpr double degrees_to_turns(double degrees) { return degrees / 360.0; }
            oOO    X               X    OOo
                oOO                 OOo
                    ooo OOO OOO ooo
+@endcode
 */
 
-/* QUARTERS
+/** @namespace turns circle cut into quaters
+@code
                    ooo OOO OOO ooo
                oOO        X        OOo
            oOO            X            OOo
@@ -125,9 +137,11 @@ constexpr double degrees_to_turns(double degrees) { return degrees / 360.0; }
            oOO            X            OOo
                oOO        X        OOo
                    ooo OOO OOO ooo
+@endcode
 */
 
-/* EIGHTHS
+/** @namespace turns circle cut into eighths
+@code
                    ooo OOO OOO ooo
                oOO        X        OOo
            oOO            X            OOo
@@ -149,6 +163,7 @@ constexpr double degrees_to_turns(double degrees) { return degrees / 360.0; }
            oOO            X            OOo
                oOO        X        OOo
                    ooo OOO OOO ooo
+@endcode
 */
 
 #endif // TURNS_HPP

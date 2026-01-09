@@ -1,6 +1,9 @@
 #ifndef TURNS_HPP
 #define TURNS_HPP
 
+#include <numbers>
+#include <cmath>
+
 /**
  *   Turns are a way of measuring angles in way where we don't have to care about arbitrary constants when we talk
  *   about a single turn, when we're working in degrees that arbitrary choice was 360, and when we're working in radians
@@ -23,12 +26,13 @@ extern const double one_quarter_turn;
 extern const double three_quarters_turn;
 extern const double full_turn;
 
-constexpr double PI = 3.141592653589793;
-
-constexpr double turns_to_radians(double turns) { return turns * 2.0 * PI; }
-constexpr double radians_to_turns(double radians) { return radians / (2.0 * PI); }
+constexpr double turns_to_radians(double turns) { return turns * 2.0 * std::numbers::pi; }
+constexpr double radians_to_turns(double radians) { return radians / (2.0 * std::numbers::pi); }
 constexpr double turns_to_degrees(double turns) { return turns * 360.0; }
 constexpr double degrees_to_turns(double degrees) { return degrees / 360.0; }
+
+constexpr double cos_turns(double t) { return std::cos(turns_to_radians(t)); }
+constexpr double sin_turns(double t) { return std::sin(turns_to_radians(t)); }
 
 }; // namespace turns
 
